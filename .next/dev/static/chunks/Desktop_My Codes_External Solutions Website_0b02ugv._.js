@@ -131,7 +131,7 @@ function Hero() {
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$My__Codes$2f$External__Solutions__Website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "mt-16 flex gap-6 text-sm text-slate-400",
+                            className: "mt-16 flex flex-wrap justify-center gap-6 text-sm text-slate-400",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$My__Codes$2f$External__Solutions__Website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "flex items-center gap-2",
@@ -182,6 +182,40 @@ function Hero() {
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/My Codes/External Solutions Website/components/sections/hero.tsx",
                                     lineNumber: 49,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$My__Codes$2f$External__Solutions__Website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex items-center gap-2",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$My__Codes$2f$External__Solutions__Website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "w-2 h-2 rounded-full bg-green-500"
+                                        }, void 0, false, {
+                                            fileName: "[project]/Desktop/My Codes/External Solutions Website/components/sections/hero.tsx",
+                                            lineNumber: 50,
+                                            columnNumber: 54
+                                        }, this),
+                                        " Senegal"
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/Desktop/My Codes/External Solutions Website/components/sections/hero.tsx",
+                                    lineNumber: 50,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$My__Codes$2f$External__Solutions__Website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex items-center gap-2",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$My__Codes$2f$External__Solutions__Website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "w-2 h-2 rounded-full bg-green-500"
+                                        }, void 0, false, {
+                                            fileName: "[project]/Desktop/My Codes/External Solutions Website/components/sections/hero.tsx",
+                                            lineNumber: 51,
+                                            columnNumber: 54
+                                        }, this),
+                                        " Cameroon"
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/Desktop/My Codes/External Solutions Website/components/sections/hero.tsx",
+                                    lineNumber: 51,
                                     columnNumber: 13
                                 }, this)
                             ]

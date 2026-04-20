@@ -5991,12 +5991,12 @@
   --radius: .75rem;
   --sidebar: #f8fafc;
   --sidebar-foreground: #0f172a;
-  --sidebar-primary: #2563eb;
+  --sidebar-primary: #045485;
   --sidebar-primary-foreground: #fff;
-  --sidebar-accent: #f1f5f9;
-  --sidebar-accent-foreground: #0f172a;
+  --sidebar-accent: #043c6c;
+  --sidebar-accent-foreground: #fff;
   --sidebar-border: #e2e8f0;
-  --sidebar-ring: #2563eb;
+  --sidebar-ring: #045485;
   --neon-cyan: #0ea5e9;
   --neon-green: #10b981;
   --neon-magenta: #d946ef;

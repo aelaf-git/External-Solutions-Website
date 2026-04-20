@@ -43,7 +43,7 @@ export default function Hero() {
             </Button>
           </div>
 
-          <div className="mt-16 flex gap-6 text-sm text-slate-400">
+          <div className="mt-16 flex flex-wrap justify-center gap-6 text-sm text-slate-400">
             <div className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-green-500"></div> Ethiopia</div>
             <div className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-green-500"></div> Nigeria</div>
             <div className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-green-500"></div> Mauritius</div>
