@@ -4,7 +4,7 @@ import { Github, Twitter, Linkedin } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-slate-700/50 bg-slate-900/50 backdrop-blur-sm">
+    <footer className="relative border-t border-slate-200 bg-slate-50/50 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
           {/* Product */}

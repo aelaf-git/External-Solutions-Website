@@ -4,46 +4,45 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated to match reference image: deep navy background with neon cyan and magenta accents */
-  --background: #0a0015;
-  --foreground: #ffffff;
-  --card: #1a0a2e;
-  --card-foreground: #ffffff;
-  --popover: #0a0015;
-  --popover-foreground: #ffffff;
-  --primary: #00ff99;
-  --primary-foreground: #0a0015;
-  --secondary: #ff00ff;
-  --secondary-foreground: #ffffff;
-  --muted: #4a4a6a;
-  --muted-foreground: #b0b0d0;
-  --accent: #00ffff;
-  --accent-foreground: #0a0015;
-  --destructive: #ff1744;
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
+  --secondary: #f1f5f9;
+  --secondary-foreground: #0f172a;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --accent: #dbeafe;
+  --accent-foreground: #1e3a8a;
+  --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --border: #2a1a4a;
-  --input: #1a0a2e;
-  --ring: #00ff99;
-  --chart-1: #00ff99;
-  --chart-2: #ff00ff;
-  --chart-3: #00ffff;
-  --chart-4: #ff1744;
-  --chart-5: #ff00ff;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #2563eb;
+  --chart-1: #2563eb;
+  --chart-2: #3b82f6;
+  --chart-3: #60a5fa;
+  --chart-4: #93c5fd;
+  --chart-5: #bfdbfe;
   --radius: 0.75rem;
-  --sidebar: #0a0015;
-  --sidebar-foreground: #ffffff;
-  --sidebar-primary: #00ff99;
-  --sidebar-primary-foreground: #0a0015;
-  --sidebar-accent: #00ffff;
-  --sidebar-accent-foreground: #0a0015;
-  --sidebar-border: #2a1a4a;
-  --sidebar-ring: #00ff99;
+  --sidebar: #f8fafc;
+  --sidebar-foreground: #0f172a;
+  --sidebar-primary: #2563eb;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f1f5f9;
+  --sidebar-accent-foreground: #0f172a;
+  --sidebar-border: #e2e8f0;
+  --sidebar-ring: #2563eb;
 
-  /* Explicit neon colors for glowing effects */
-  --neon-cyan: #00ffff;
-  --neon-green: #00ff99;
-  --neon-magenta: #ff00ff;
-  --neon-pink: #ff1493;
+  /* Accent colors */
+  --neon-cyan: #0ea5e9;
+  --neon-green: #10b981;
+  --neon-magenta: #d946ef;
+  --neon-pink: #ec4899;
 }
 
 .dark {
