@@ -5,12 +5,10 @@ import { Button } from "@/components/ui/button"
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0a0015] via-[#1a0a2e] to-[#0a0015]"></div>
-
+    <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden bg-background">
       {/* Decorative glow orbs */}
-      <div className="absolute top-20 left-10 w-32 h-32 bg-accent/10 rounded-full blur-3xl pointer-events-none"></div>
-      <div className="absolute bottom-40 right-20 w-40 h-40 bg-secondary/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute top-20 left-10 w-32 h-32 bg-primary/20 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-40 right-20 w-40 h-40 bg-accent/20 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="relative z-20 max-w-7xl mx-auto w-full text-center">
         <div className="flex flex-col items-center gap-8 max-w-4xl mx-auto">
@@ -20,8 +18,8 @@ export default function Hero() {
             <span className="text-sm font-medium">Your Gateway to African Markets</span>
           </div>
 
-          <h1 className="text-5xl lg:text-7xl font-semibold text-balance leading-tight neon-text-glow">
-            <span className="text-white">External Solutions </span>
+          <h1 className="text-5xl lg:text-7xl font-semibold text-balance leading-tight">
+            <span className="text-foreground">External Solutions </span>
             <span className="text-primary">LLC</span>
           </h1>
           

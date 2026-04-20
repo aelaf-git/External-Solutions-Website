@@ -2053,6 +2053,16 @@
     }
   }
 
+  .bg-accent\/20 {
+    background-color: var(--accent);
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .bg-accent\/20 {
+      background-color: color-mix(in oklab, var(--accent) 20%, transparent);
+    }
+  }
+
   .bg-background {
     background-color: var(--background);
   }
@@ -2330,6 +2340,10 @@
 
   .fill-primary {
     fill: var(--primary);
+  }
+
+  .object-contain {
+    object-fit: contain;
   }
 
   .p-0 {

@@ -319,10 +319,11 @@ function Navbar() {
                                 className: "flex items-center gap-2",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$My__Codes$2f$External__Solutions__Website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "w-8 h-8 rounded-lg bg-primary flex items-center justify-center",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$My__Codes$2f$External__Solutions__Website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "text-xs font-semibold text-primary-foreground",
-                                            children: "ES"
+                                        className: "w-10 h-10 flex items-center justify-center",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$My__Codes$2f$External__Solutions__Website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                            src: "/logo.png",
+                                            alt: "External Solutions LLC Logo",
+                                            className: "w-full h-full object-contain"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/My Codes/External Solutions Website/components/navbar.tsx",
                                             lineNumber: 27,

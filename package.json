@@ -1,17 +1,13 @@
 {
-  "name": "cybershield",
+  "name": "external-solutions-website",
   "version": "1.0.0",
-  "description": "",
+  "description": "External Solutions LLC Website",
   "main": "index.js",
   "directories": {
     "lib": "lib"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/themewagon/cybershield.git"
-  },
   "keywords": [],
-  "author": "",
+  "author": "External Solutions LLC",
   "license": "ISC",
   "scripts": {
     "build": "next build",
@@ -81,9 +77,5 @@
     "tw-animate-css": "1.3.3",
     "typescript": "^5"
   },
-  "type": "module",
-  "bugs": {
-    "url": "https://github.com/themewagon/cybershield/issues"
-  },
-  "homepage": "https://github.com/themewagon/cybershield.git"
+  "type": "module"
 }

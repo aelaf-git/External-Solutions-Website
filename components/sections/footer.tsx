@@ -147,8 +147,8 @@ export default function Footer() {
         <div className="border-t border-slate-700/50 pt-8 flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Logo/Brand */}
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-              <span className="text-xs font-semibold text-primary-foreground">ES</span>
+            <div className="w-10 h-10 flex items-center justify-center">
+              <img src="/logo.png" alt="External Solutions LLC Logo" className="w-full h-full object-contain" />
             </div>
             <span className="font-semibold text-foreground">External Solutions</span>
           </div>

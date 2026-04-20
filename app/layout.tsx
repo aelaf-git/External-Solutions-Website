@@ -3,7 +3,6 @@ import type { Metadata, Viewport } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 
 import Navbar from "@/components/navbar"
-import DownloadButton from "@/components/sections/download"
 import "./globals.css"
 
 const _geist = Geist({ subsets: ["latin"] })
@@ -25,7 +24,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0f0f0f",
+  themeColor: "#ffffff",
   userScalable: true,
 }
 
@@ -35,12 +34,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
+    <html lang="en" className="light" suppressHydrationWarning>
       <body className={`font-sans antialiased`} suppressHydrationWarning>
         <Navbar />
         {children}
-         <DownloadButton />
-    
       </body>
     </html>
   )

@@ -1,40 +1,26 @@
-# CyberShield - a high-impact, cyberpunk-inspired Next.js Cybersecurity SaaS Website Template built for modern security startups, enterprise SaaS platforms, and tech innovators.
-#### Preview
+# External Solutions LLC Website
 
- - [Demo](https://themewagon.github.io/cybershield/)
-
-#### Download
- - [Download from ThemeWagon](https://themewagon.com/themes/cybershield/)
+Welcome to the official website repository for External Solutions LLC. This project is built using Next.js (App Router), React, Tailwind CSS, and Shadcn UI.
 
 ## Getting Started
 
-1. Clone Repository
+First, install dependencies using your preferred package manager:
+
+```bash
+npm install
 ```
-git clone https://github.com/themewagon/cybershield.git
-```
-2. Install Dependencies
-```
-npm i
-```
-3. Run the development server:
+
+Then, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-## Author 
-```
-Design and code is completely written by Codescandy and development team. 
-```
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## License
+## Architecture & Stack
 
- - Design and Code is Copyright &copy; <a href="https://codescandy.com/" target="_blank">Codescandy</a>
- - Licensed cover under [MIT]
- - Distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+- **Next.js 16+**: App router architecture for scalable React applications.
+- **Tailwind CSS**: Utility-first CSS framework for rapid and robust styling.
+- **Radix & Shadcn UI**: Accessible component primitives styled with Tailwind.
+- **Lucide Icons**: For lightweight iconography.

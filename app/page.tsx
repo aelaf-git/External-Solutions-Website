@@ -1,7 +1,7 @@
 import Hero from "@/components/sections/hero"
-import Problem from "@/components/sections/problem"
-import Features from "@/components/sections/features"
-import UseCases from "@/components/sections/use-cases"
+import Expertise from "@/components/sections/expertise"
+import Competencies from "@/components/sections/competencies"
+import HowWeWork from "@/components/sections/how-we-work"
 import Footer from "@/components/sections/footer"
 
 export default function Home() {
@@ -13,9 +13,9 @@ export default function Home() {
       </div>
       <div className="relative z-10 pt-20">
         <Hero />
-        <Problem />
-        <Features />
-        <UseCases />
+        <Expertise />
+        <Competencies />
+        <HowWeWork />
         <Footer />
        </div>
     </main>
