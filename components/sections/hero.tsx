@@ -47,6 +47,8 @@ export default function Hero() {
             <div className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-green-500"></div> Ethiopia</div>
             <div className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-green-500"></div> Nigeria</div>
             <div className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-green-500"></div> Mauritius</div>
+            <div className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-green-500"></div> Senegal</div>
+            <div className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-green-500"></div> Cameroon</div>
           </div>
         </div>
       </div>
