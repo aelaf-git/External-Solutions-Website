@@ -1,14 +1,8 @@
 import Hero from "@/components/sections/hero"
 import Problem from "@/components/sections/problem"
-import Solution from "@/components/sections/solution"
 import Features from "@/components/sections/features"
 import UseCases from "@/components/sections/use-cases"
-import Testimonials from "@/components/sections/testimonials"
-import Pricing from "@/components/sections/pricing"
-import FAQ from "@/components/sections/faq"
-import FinalCTA from "@/components/sections/final-cta"
 import Footer from "@/components/sections/footer"
-
 
 export default function Home() {
   return (
@@ -20,13 +14,8 @@ export default function Home() {
       <div className="relative z-10 pt-20">
         <Hero />
         <Problem />
-        <Solution />
         <Features />
         <UseCases />
-        <Testimonials />
-        <Pricing />
-        <FAQ />
-        <FinalCTA />
         <Footer />
        </div>
     </main>

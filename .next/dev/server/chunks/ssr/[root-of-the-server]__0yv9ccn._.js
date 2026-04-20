@@ -148,8 +148,8 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$My__Codes$2f$Exte
 ;
 ;
 const metadata = {
-    title: "CyberShield - Enterprise-Grade Cybersecurity Platform",
-    description: "Detect, prevent, and respond to cyber threats in real-time with AI-powered security. SOC 2 • ISO 27001 • GDPR Ready",
+    title: "External Solutions LLC",
+    description: "Expertise in working with manufacturing, high-tech, and pharma companies expanding into African markets.",
     icons: {
         icon: [
             {

@@ -1,23 +1,23 @@
 "use client"
 
-import { AlertTriangle, TrendingUp, Zap } from "lucide-react"
+import { Briefcase, Landmark, Handshake } from "lucide-react"
 
 export default function Problem() {
-  const problems = [
+  const expertise = [
     {
-      stat: "1 cyber attack every 39 seconds",
-      description: "The threat landscape is growing exponentially",
-      icon: TrendingUp,
+      stat: "Technical Consulting & Structuring",
+      description: "Effective engagement with state authorities to promote beneficial projects, pre-contract arrangements, and transfer of technologies (e.g. hubs in Ethiopia).",
+      icon: Briefcase,
     },
     {
-      stat: "Traditional security tools are slow, reactive, and complex",
-      description: "Leave gaps in your defense and slow your team down",
-      icon: AlertTriangle,
+      stat: "Financing Support & Risk Management",
+      description: "Provision of project financing, bank guarantees, letters of credit (LC), and engagements with local and development banks for significant infrastructure projects.",
+      icon: Landmark,
     },
     {
-      stat: "Small gaps → massive data breaches",
-      description: "Without real-time detection, damage compounds quickly",
-      icon: Zap,
+      stat: "Official Business Missions",
+      description: "Comprehensive support for business missions, organizing in-person, online, and hybrid protocol events, and facilitating expert-level negotiations.",
+      icon: Handshake,
     },
   ]
 
@@ -25,24 +25,24 @@ export default function Problem() {
     <section className="relative py-24 px-4 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl md:text-5xl font-semibold text-balance neon-text-glow">The Threat Is Real</h2>
+          <h2 className="text-4xl md:text-5xl font-semibold text-balance neon-text-glow">Our Core Expertise</h2>
           <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-            Your security team is overwhelmed. Your tools are outdated. Your defenses have gaps.
+            Facilitating expansion into neighboring countries securely and efficiently.
           </p>
         </div>
 
-        {/* Problem Cards */}
+        {/* Expertise Cards */}
         <div className="grid md:grid-cols-3 gap-6">
-          {problems.map((problem, index) => {
-            const Icon = problem.icon
+          {expertise.map((item, index) => {
+            const Icon = item.icon
             return (
               <div
                 key={index}
-                className="p-8 rounded-xl glassmorphism glow-border hover:border-accent  transition group"
+                className="p-8 rounded-xl glassmorphism glow-border hover:border-accent transition group"
               >
-                <Icon className="w-8 h-8 text-primary group-hover:text-accent transition mb-4" />
-                <h3 className="text-2xl font-semibold text-foreground mb-2">{problem.stat}</h3>
-                <p className="text-slate-400">{problem.description}</p>
+                <Icon className="w-10 h-10 text-primary group-hover:text-accent transition mb-6" />
+                <h3 className="text-xl font-semibold text-foreground mb-4">{item.stat}</h3>
+                <p className="text-slate-400 text-sm leading-relaxed">{item.description}</p>
               </div>
             )
           })}

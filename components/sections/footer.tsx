@@ -148,13 +148,13 @@ export default function Footer() {
           {/* Logo/Brand */}
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-              <span className="text-xs font-semibold text-primary-foreground">CS</span>
+              <span className="text-xs font-semibold text-primary-foreground">ES</span>
             </div>
-            <span className="font-semibold text-foreground">CyberShield</span>
+            <span className="font-semibold text-foreground">External Solutions</span>
           </div>
 
           {/* Copyright */}
-          <p className="text-sm text-slate-500">© 2026 CyberShield. Developed by <a className="hover:text-primary transition font-semibold" href="https://codescandy.com" target="_blank">Codescandy</a> • Distributed by <a className="hover:text-primary transition font-semibold" href="https://themewagon.com" target="_blank">ThemeWagon</a></p>
+          <p className="text-sm text-slate-500">© 2026 External Solutions LLC</p>
 
           {/* Social Links */}
           <div className="flex items-center gap-4">

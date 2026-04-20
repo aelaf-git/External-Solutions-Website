@@ -24,9 +24,9 @@ export default function Navbar() {
           <Link href="/" className="flex items-center gap-3 group">
              <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-              <span className="text-xs font-semibold text-primary-foreground">CS</span>
+              <span className="text-xs font-semibold text-primary-foreground">ES</span>
             </div>
-            <span className="font-semibold text-foreground">CyberShield</span>
+            <span className="font-semibold text-foreground">External Solutions</span>
           </div>
           </Link>
 
@@ -43,26 +43,15 @@ export default function Navbar() {
             </NavigationMenuList>
           </NavigationMenu>
 
-          {/* Right Section: Search & CTA */}
+          {/* Right Section: CTA */}
           <div className="hidden lg:flex items-center gap-4">
-            {/* Search Input */}
-            <div className="relative group">
-              <input
-                type="text"
-                placeholder="Search"
-                className="px-4 py-2 bg-background/50 border-2 border-gray-600 rounded-full text-sm text-foreground placeholder-muted-foreground focus:outline-none focus:bg-background transition-all w-48 "
-              />
-              <Search className="absolute right-3 top-2.5 w-4 h-4 text-accent pointer-events-none" />
-            </div>
-
             {/* CTA Button */}
-            <Link href="/join">
+            <Link href="/contact">
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-primary to-accent text-background font-semibold  rounded-full px-6  hover:shadow-lg  transition-all"
               >
-                <Shield className="w-4 h-4" />
-                Join Now
+                Contact Us
               </Button>
             </Link>
           </div>
@@ -94,12 +83,12 @@ export default function Navbar() {
                 placeholder="SEARCH"
                 className="w-full px-4 py-2 bg-background/50 border-2 border-accent rounded-full text-sm text-foreground placeholder-muted-foreground focus:outline-none"
               />
-              <Link href="/join" className="w-full">
+              <Link href="/contact" className="w-full">
                 <Button
                   size="sm"
                   className="w-full bg-gradient-to-r from-primary to-accent text-background font-semibold  rounded-full"
                 >
-                  Join Now
+                  Contact Us
                 </Button>
               </Link>
             </div>
