@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Menu, X, Search, Shield } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { NavigationMenu, NavigationMenuList, NavigationMenuItem } from "@/components/ui/navigation-menu"
 
@@ -13,7 +13,6 @@ export default function Navbar() {
     { label: "Home", href: "/" },
     { label: "About us", href: "/about" },
     { label: "Services", href: "/services" },
-    { label: "Contact", href: "/contact" },
   ]
 
   return (
