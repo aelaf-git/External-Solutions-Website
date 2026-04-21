@@ -14,11 +14,10 @@ export const metadata: Metadata = {
   description:
     "Expertise in working with manufacturing, high-tech, and pharma companies expanding into African markets.",
  
-   icons: {
+  icons: {
     icon: "/logo.png",
     apple: "/logo.png",
   },
-  manifest: "./site.webmanifest",
 };
 
 export const viewport: Viewport = {
