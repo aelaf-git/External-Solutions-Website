@@ -58,10 +58,11 @@ export default function Contact() {
                   <MapPin className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground mb-1">Our Office</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    Available for remote consultations worldwide
-                  </p>
+                  <h3 className="font-semibold text-foreground mb-1">Our Offices</h3>
+                  <div className="text-sm text-muted-foreground leading-relaxed space-y-1">
+                    <p>Moscow, Russia</p>
+                    <p>Dubai, UAE</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -74,9 +75,10 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">Email Us</h3>
-                  <p className="text-sm text-muted-foreground">
-                    info@externalsolutions.com
-                  </p>
+                  <div className="text-sm text-muted-foreground space-y-1">
+                    <a href="mailto:ali@externalsolutionsllc.org" className="block hover:text-primary transition-colors">ali@externalsolutionsllc.org</a>
+                    <a href="mailto:chris@externalsolutionsllc.org" className="block hover:text-primary transition-colors">chris@externalsolutionsllc.org</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -89,9 +91,10 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">Call Us</h3>
-                  <p className="text-sm text-muted-foreground">
-                    +1 (555) 123-4567
-                  </p>
+                  <div className="text-sm text-muted-foreground space-y-1">
+                    <a href="tel:+79280267873" className="block hover:text-primary transition-colors">+7 928 026-78-73</a>
+                    <a href="tel:+79035678448" className="block hover:text-primary transition-colors">+7 903 567-84-48</a>
+                  </div>
                 </div>
               </div>
             </div>

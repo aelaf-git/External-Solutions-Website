@@ -76,13 +76,34 @@ export default function Footer() {
           <div className="space-y-4">
             <h4 className="font-semibold text-foreground">Contact Info</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-primary flex-shrink-0" />
-                <span>info@externalsolutions.com</span>
+              <li className="flex flex-col gap-2">
+                <div className="flex items-start gap-2">
+                  <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                  <div className="flex flex-col">
+                    <span>Moscow, Russia</span>
+                    <span>Dubai, UAE</span>
+                  </div>
+                </div>
               </li>
-              <li className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-primary flex-shrink-0" />
-                <span>+1 (555) 123-4567</span>
+              <li className="flex flex-col gap-2">
+                <div className="flex items-center gap-2">
+                  <Mail className="w-4 h-4 text-primary flex-shrink-0" />
+                  <a href="mailto:ali@externalsolutionsllc.org" className="hover:text-primary transition-colors">ali@externalsolutionsllc.org</a>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Mail className="w-4 h-4 text-primary flex-shrink-0" />
+                  <a href="mailto:chris@externalsolutionsllc.org" className="hover:text-primary transition-colors">chris@externalsolutionsllc.org</a>
+                </div>
+              </li>
+              <li className="flex flex-col gap-2">
+                <div className="flex items-center gap-2">
+                  <Phone className="w-4 h-4 text-primary flex-shrink-0" />
+                  <a href="tel:+79280267873" className="hover:text-primary transition-colors">+7 928 026-78-73</a>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Phone className="w-4 h-4 text-primary flex-shrink-0" />
+                  <a href="tel:+79035678448" className="hover:text-primary transition-colors">+7 903 567-84-48</a>
+                </div>
               </li>
             </ul>
           </div>

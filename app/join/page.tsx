@@ -41,12 +41,12 @@ export default function JoinNow() {
   }
 
   const benefits = [
-    'Real-time threat detection',
-    'AI-powered security analytics',
-    'Automated incident response',
-    '24/7 expert support',
-    'Compliance reporting',
-    'Custom dashboard',
+    'Market expansion strategy',
+    'Strategic cooperation development',
+    'Regulatory compliance guidance',
+    'Partnership networking',
+    'Local market insights',
+    'Cross-border logistics support',
   ]
 
   return (
@@ -61,7 +61,7 @@ export default function JoinNow() {
           {step !== 4 && (
             <div className="text-center mb-16">
               <h1 className="text-5xl md:text-6xl font-sbold mb-6 ">
-                Join <span className="text-accent">Cybersheild</span>
+                Join <span className="text-accent">External Solutions</span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 Get started with enterprise-grade security in minutes
@@ -230,7 +230,7 @@ export default function JoinNow() {
                           onChange={handleChange}
                           required
                           className="w-full px-4 py-3 bg-background/50 border-2 border-primary/30 rounded-lg text-foreground focus:outline-none focus:border-accent transition-colors"
-                          placeholder="john@company.com"
+                          placeholder="ali@externalsolutionsllc.org"
                         />
                       </div>
 
@@ -246,7 +246,7 @@ export default function JoinNow() {
                           onChange={handleChange}
                           required
                           className="w-full px-4 py-3 bg-background/50 border-2 border-primary/30 rounded-lg text-foreground focus:outline-none focus:border-accent transition-colors"
-                          placeholder="+1 (555) 123-4567"
+                          placeholder="+7 928 026-78-73"
                         />
                       </div>
                     </div>

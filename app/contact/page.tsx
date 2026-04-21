@@ -31,20 +31,20 @@ export default function Contact() {
     {
       icon: Mail,
       label: 'Email',
-      value: 'info@externalsolutions.com',
-      link: 'mailto:info@externalsolutions.com'
+      values: ['ali@externalsolutionsllc.org', 'chris@externalsolutionsllc.org'],
+      links: ['mailto:ali@externalsolutionsllc.org', 'mailto:chris@externalsolutionsllc.org']
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+1 (555) 123-4567',
-      link: 'tel:+15551234567'
+      values: ['+7 928 026-78-73', '+7 903 567-84-48'],
+      links: ['tel:+79280267873', 'tel:+79035678448']
     },
     {
       icon: MapPin,
       label: 'Address',
-      value: '99 SW 8th St, Miami, FL 33130',
-      link: '#'
+      values: ['Moscow, Russia', 'Dubai, UAE'],
+      links: ['#', '#']
     },
   ]
 
@@ -70,17 +70,26 @@ export default function Contact() {
             {contactInfo.map((info, idx) => {
               const Icon = info.icon
               return (
-                <a
+                <div
                   key={idx}
-                  href={info.link}
                   className="bg-card/50 border-2 border-primary/30 rounded-xl p-8 text-center hover:border-accent transition-colors group"
                 >
                   <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                     <Icon className="w-8 h-8 text-background" />
                   </div>
                   <h3 className="text-lg font-semibold text-foreground mb-2">{info.label}</h3>
-                  <p className="text-accent hover:text-primary transition-colors">{info.value}</p>
-                </a>
+                  <div className="space-y-1">
+                    {info.values.map((v, i) => (
+                      <a 
+                        key={i} 
+                        href={info.links[i]} 
+                        className="block text-accent hover:text-primary transition-colors"
+                      >
+                        {v}
+                      </a>
+                    ))}
+                  </div>
+                </div>
               )
             })}
           </div>
