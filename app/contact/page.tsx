@@ -1,31 +1,45 @@
-'use client'
+"use client"
 
-import { useActionState, useEffect, useRef } from "react"
-import { submitContactForm, type ContactFormState } from "@/lib/actions/contact"
+import { useState, useRef } from "react"
 import { Mail, Phone, MapPin, Send, User, MessageSquare } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import Footer from '@/components/sections/footer'
 import { toast } from "sonner"
 
-const initialState: ContactFormState = {
-  success: false,
-  message: "",
-}
-
 export default function Contact() {
-  const [state, formAction, isPending] = useActionState(submitContactForm, initialState)
+  const [isPending, setIsPending] = useState(false)
   const formRef = useRef<HTMLFormElement>(null)
 
-  useEffect(() => {
-    if (state.message) {
-      if (state.success) {
-        toast.success(state.message)
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsPending(true)
+
+    const formData = new FormData(e.currentTarget)
+    const data = Object.fromEntries(formData.entries())
+
+    try {
+      const response = await fetch("/contact.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+
+      const result = await response.json()
+
+      if (result.success) {
+        toast.success(result.message)
         formRef.current?.reset()
-      } else if (!state.errors) {
-        toast.error(state.message)
+      } else {
+        toast.error(result.message)
       }
+    } catch (error) {
+      toast.error("An error occurred. Please try again later.")
+    } finally {
+      setIsPending(false)
     }
-  }, [state])
+  }
 
   const contactInfo = [
     {
@@ -99,7 +113,7 @@ export default function Contact() {
             <div className="bg-card/50 border-2 border-primary/30 rounded-2xl p-8">
               <h2 className="text-2xl font-semibold mb-8 text-center">Send us a Message</h2>
               
-              <form ref={formRef} action={formAction} className="space-y-6">
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label htmlFor="page-name" className="text-sm font-medium text-foreground flex items-center gap-2">
@@ -114,9 +128,6 @@ export default function Contact() {
                       className="w-full px-4 py-3 bg-background/50 border-2 border-primary/30 rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-accent transition-colors"
                       placeholder="John Doe"
                     />
-                    {state.errors?.name && (
-                      <p className="text-sm text-destructive">{state.errors.name[0]}</p>
-                    )}
                   </div>
                   <div className="space-y-2">
                     <label htmlFor="page-email" className="text-sm font-medium text-foreground flex items-center gap-2">
@@ -131,9 +142,6 @@ export default function Contact() {
                       className="w-full px-4 py-3 bg-background/50 border-2 border-primary/30 rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-accent transition-colors"
                       placeholder="john@company.com"
                     />
-                    {state.errors?.email && (
-                      <p className="text-sm text-destructive">{state.errors.email[0]}</p>
-                    )}
                   </div>
                 </div>
 
@@ -150,9 +158,6 @@ export default function Contact() {
                     className="w-full px-4 py-3 bg-background/50 border-2 border-primary/30 rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-accent transition-colors"
                     placeholder="Project Consultation"
                   />
-                  {state.errors?.subject && (
-                    <p className="text-sm text-destructive">{state.errors.subject[0]}</p>
-                  )}
                 </div>
 
                 <div className="space-y-2">
@@ -168,9 +173,6 @@ export default function Contact() {
                     className="w-full px-4 py-3 bg-background/50 border-2 border-primary/30 rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-accent transition-colors resize-none"
                     placeholder="Tell us about your project and how we can help..."
                   ></textarea>
-                  {state.errors?.message && (
-                    <p className="text-sm text-destructive">{state.errors.message[0]}</p>
-                  )}
                 </div>
 
                 <Button
@@ -190,11 +192,6 @@ export default function Contact() {
                     </>
                   )}
                 </Button>
-
-                {/* General error message */}
-                {!state.success && state.message && !state.errors && (
-                  <p className="text-sm text-destructive text-center">{state.message}</p>
-                )}
               </form>
             </div>
           </div>

@@ -1,29 +1,43 @@
 "use client"
 
-import { useActionState, useEffect, useRef } from "react"
-import { submitContactForm, type ContactFormState } from "@/lib/actions/contact"
+import { useState, useRef } from "react"
 import { Mail, User, MessageSquare, Send, MapPin, Phone, Clock } from "lucide-react"
 import { toast } from "sonner"
 
-const initialState: ContactFormState = {
-  success: false,
-  message: "",
-}
-
 export default function Contact() {
-  const [state, formAction, isPending] = useActionState(submitContactForm, initialState)
+  const [isPending, setIsPending] = useState(false)
   const formRef = useRef<HTMLFormElement>(null)
 
-  useEffect(() => {
-    if (state.message) {
-      if (state.success) {
-        toast.success(state.message)
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsPending(true)
+
+    const formData = new FormData(e.currentTarget)
+    const data = Object.fromEntries(formData.entries())
+
+    try {
+      const response = await fetch("/contact.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+
+      const result = await response.json()
+
+      if (result.success) {
+        toast.success(result.message)
         formRef.current?.reset()
-      } else if (!state.errors) {
-        toast.error(state.message)
+      } else {
+        toast.error(result.message)
       }
+    } catch (error) {
+      toast.error("An error occurred. Please try again later.")
+    } finally {
+      setIsPending(false)
     }
-  }, [state])
+  }
 
   return (
     <section id="contact" className="relative py-24 px-4">
@@ -115,11 +129,10 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Contact Form */}
           <div className="lg:col-span-3">
             <form
               ref={formRef}
-              action={formAction}
+              onSubmit={handleSubmit}
               className="relative p-8 md:p-10 rounded-2xl bg-card border border-border shadow-xl shadow-primary/5"
             >
               {/* Decorative gradient border top */}
@@ -140,9 +153,6 @@ export default function Contact() {
                     placeholder="John Doe"
                     className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all duration-200"
                   />
-                  {state.errors?.name && (
-                    <p className="text-sm text-destructive mt-1">{state.errors.name[0]}</p>
-                  )}
                 </div>
 
                 {/* Email field */}
@@ -159,9 +169,6 @@ export default function Contact() {
                     placeholder="john@example.com"
                     className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all duration-200"
                   />
-                  {state.errors?.email && (
-                    <p className="text-sm text-destructive mt-1">{state.errors.email[0]}</p>
-                  )}
                 </div>
 
                 {/* Subject field */}
@@ -178,9 +185,6 @@ export default function Contact() {
                     placeholder="Project Consultation"
                     className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all duration-200"
                   />
-                  {state.errors?.subject && (
-                    <p className="text-sm text-destructive mt-1">{state.errors.subject[0]}</p>
-                  )}
                 </div>
 
                 {/* Message field */}
@@ -197,9 +201,6 @@ export default function Contact() {
                     placeholder="Tell us about your project, goals, and how we can help..."
                     className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all duration-200 resize-none"
                   />
-                  {state.errors?.message && (
-                    <p className="text-sm text-destructive mt-1">{state.errors.message[0]}</p>
-                  )}
                 </div>
 
                 {/* Submit button */}
@@ -220,11 +221,6 @@ export default function Contact() {
                     </>
                   )}
                 </button>
-
-                {/* General error message (non-field) */}
-                {!state.success && state.message && !state.errors && (
-                  <p className="text-sm text-destructive text-center">{state.message}</p>
-                )}
               </div>
             </form>
           </div>
