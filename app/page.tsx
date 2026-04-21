@@ -2,6 +2,7 @@ import Hero from "@/components/sections/hero"
 import Expertise from "@/components/sections/expertise"
 import Competencies from "@/components/sections/competencies"
 import HowWeWork from "@/components/sections/how-we-work"
+import Contact from "@/components/sections/contact"
 import Footer from "@/components/sections/footer"
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
         <Expertise />
         <Competencies />
         <HowWeWork />
+        <Contact />
         <Footer />
        </div>
     </main>

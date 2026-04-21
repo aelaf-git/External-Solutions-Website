@@ -1,6 +1,7 @@
 import type React from "react"
 import type { Metadata, Viewport } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
+import { Toaster } from "sonner"
 
 import Navbar from "@/components/navbar"
 import "./globals.css"
@@ -35,6 +36,7 @@ export default function RootLayout({
       <body className={`font-sans antialiased`} suppressHydrationWarning>
         <Navbar />
         {children}
+        <Toaster position="top-right" richColors closeButton />
       </body>
     </html>
   )
