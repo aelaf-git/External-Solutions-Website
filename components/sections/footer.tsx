@@ -1,6 +1,6 @@
 "use client"
 
-import { Github, Twitter, Linkedin, Mail, Phone } from "lucide-react"
+import { Mail, Phone, MapPin } from "lucide-react"
 import Link from "next/link"
 
 export default function Footer() {
@@ -19,30 +19,6 @@ export default function Footer() {
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
               Empowering businesses across Africa and beyond with innovative technology solutions and expert consulting services.
             </p>
-            {/* Social Links */}
-            <div className="flex items-center gap-3 pt-2">
-              <a
-                href="#"
-                className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all duration-200"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-4 h-4" />
-              </a>
-              <a
-                href="#"
-                className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all duration-200"
-                aria-label="Twitter"
-              >
-                <Twitter className="w-4 h-4" />
-              </a>
-              <a
-                href="#"
-                className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all duration-200"
-                aria-label="GitHub"
-              >
-                <Github className="w-4 h-4" />
-              </a>
-            </div>
           </div>
 
           {/* Quick Links */}
