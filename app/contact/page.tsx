@@ -1,38 +1,38 @@
 'use client'
 
-import React from "react"
-
-import { Mail, Phone, MapPin, Send } from 'lucide-react'
+import { useActionState, useEffect, useRef } from "react"
+import { submitContactForm, type ContactFormState } from "@/lib/actions/contact"
+import { Mail, Phone, MapPin, Send, User, MessageSquare } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import Footer from '@/components/sections/footer'
-import { useState } from 'react'
+import { toast } from "sonner"
+
+const initialState: ContactFormState = {
+  success: false,
+  message: "",
+}
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    message: '',
-  })
+  const [state, formAction, isPending] = useActionState(submitContactForm, initialState)
+  const formRef = useRef<HTMLFormElement>(null)
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData(prev => ({ ...prev, [name]: value }))
-  }
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log('Form submitted:', formData)
-    setFormData({ name: '', email: '', company: '', message: '' })
-    alert('Message sent! We\'ll get back to you soon.')
-  }
+  useEffect(() => {
+    if (state.message) {
+      if (state.success) {
+        toast.success(state.message)
+        formRef.current?.reset()
+      } else if (!state.errors) {
+        toast.error(state.message)
+      }
+    }
+  }, [state])
 
   const contactInfo = [
     {
       icon: Mail,
       label: 'Email',
-      value: 'support@cybershield.com',
-      link: 'mailto:support@cybershield.com'
+      value: 'info@externalsolutions.com',
+      link: 'mailto:info@externalsolutions.com'
     },
     {
       icon: Phone,
@@ -90,78 +90,102 @@ export default function Contact() {
             <div className="bg-card/50 border-2 border-primary/30 rounded-2xl p-8">
               <h2 className="text-2xl font-semibold mb-8 text-center">Send us a Message</h2>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form ref={formRef} action={formAction} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm  text-foreground mb-2 ">
+                  <div className="space-y-2">
+                    <label htmlFor="page-name" className="text-sm font-medium text-foreground flex items-center gap-2">
+                      <User className="w-4 h-4 text-primary" />
                       Full Name
                     </label>
                     <input
                       type="text"
-                      id="name"
+                      id="page-name"
                       name="name"
-                      value={formData.name}
-                      onChange={handleChange}
                       required
                       className="w-full px-4 py-3 bg-background/50 border-2 border-primary/30 rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-accent transition-colors"
                       placeholder="John Doe"
                     />
+                    {state.errors?.name && (
+                      <p className="text-sm text-destructive">{state.errors.name[0]}</p>
+                    )}
                   </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm  text-foreground mb-2 ">
+                  <div className="space-y-2">
+                    <label htmlFor="page-email" className="text-sm font-medium text-foreground flex items-center gap-2">
+                      <Mail className="w-4 h-4 text-primary" />
                       Email Address
                     </label>
                     <input
                       type="email"
-                      id="email"
+                      id="page-email"
                       name="email"
-                      value={formData.email}
-                      onChange={handleChange}
                       required
                       className="w-full px-4 py-3 bg-background/50 border-2 border-primary/30 rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-accent transition-colors"
                       placeholder="john@company.com"
                     />
+                    {state.errors?.email && (
+                      <p className="text-sm text-destructive">{state.errors.email[0]}</p>
+                    )}
                   </div>
                 </div>
 
-                <div>
-                  <label htmlFor="company" className="block text-sm  text-foreground mb-2 ">
-                    Company
+                <div className="space-y-2">
+                  <label htmlFor="page-subject" className="text-sm font-medium text-foreground flex items-center gap-2">
+                    <MessageSquare className="w-4 h-4 text-primary" />
+                    Subject
                   </label>
                   <input
                     type="text"
-                    id="company"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleChange}
+                    id="page-subject"
+                    name="subject"
+                    required
                     className="w-full px-4 py-3 bg-background/50 border-2 border-primary/30 rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-accent transition-colors"
-                    placeholder="Your Company"
+                    placeholder="Project Consultation"
                   />
+                  {state.errors?.subject && (
+                    <p className="text-sm text-destructive">{state.errors.subject[0]}</p>
+                  )}
                 </div>
 
-                <div>
-                  <label htmlFor="message" className="block text-sm  text-foreground mb-2 ">
+                <div className="space-y-2">
+                  <label htmlFor="page-message" className="text-sm font-medium text-foreground flex items-center gap-2">
+                    <MessageSquare className="w-4 h-4 text-primary" />
                     Message
                   </label>
                   <textarea
-                    id="message"
+                    id="page-message"
                     name="message"
-                    value={formData.message}
-                    onChange={handleChange}
                     required
                     rows={5}
                     className="w-full px-4 py-3 bg-background/50 border-2 border-primary/30 rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-accent transition-colors resize-none"
-                    placeholder="Tell us about your security needs..."
+                    placeholder="Tell us about your project and how we can help..."
                   ></textarea>
+                  {state.errors?.message && (
+                    <p className="text-sm text-destructive">{state.errors.message[0]}</p>
+                  )}
                 </div>
 
                 <Button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-primary to-accent text-background font-semibold  rounded-full py-3  hover:shadow-lg"
+                  disabled={isPending}
+                  className="w-full bg-gradient-to-r from-primary to-accent text-background font-semibold rounded-full py-3 hover:shadow-lg transition-all disabled:opacity-60"
                 >
-                  <Send className="w-4 h-4" />
-                  Send Message
+                  {isPending ? (
+                    <>
+                      <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4" />
+                      Send Message
+                    </>
+                  )}
                 </Button>
+
+                {/* General error message */}
+                {!state.success && state.message && !state.errors && (
+                  <p className="text-sm text-destructive text-center">{state.message}</p>
+                )}
               </form>
             </div>
           </div>
