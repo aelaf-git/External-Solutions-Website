@@ -11,8 +11,8 @@ export default function Navbar() {
 
   const navLinks = [
     { label: "Home", href: "/" },
-    { label: "About us", href: "/about" },
-    { label: "Services", href: "/services" },
+    { label: "About us", href: "#about" },
+    { label: "Services", href: "#services" },
   ]
 
   return (
@@ -71,6 +71,7 @@ export default function Navbar() {
               <Link
                 key={link.label}
                 href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
                 className="block px-4 py-2 text-sm font-medium text-foreground  hover:text-accent transition-colors rounded-lg hover:bg-primary/10"
               >
                 {link.label}

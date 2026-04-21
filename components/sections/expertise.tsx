@@ -22,7 +22,7 @@ export default function Problem() {
   ]
 
   return (
-    <section className="relative py-24 px-4 overflow-hidden">
+    <section id="services" className="relative py-24 px-4 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-4xl md:text-5xl font-semibold text-balance neon-text-glow">Our Core Expertise</h2>
